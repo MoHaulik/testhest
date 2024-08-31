@@ -1,9 +1,10 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bible Verse with Easter Egg</title>
+    <title>Bible Verse with Easter Egg and VR Experience</title>
     <style>
         body {
             background-color: white;
@@ -19,11 +20,17 @@
             font-size: 1.2em;
             color: darkorange;
         }
-        .reveal-button {
+        .reveal-button, #open-vr {
             margin-top: 20px;
             padding: 10px 20px;
             font-size: 1em;
             cursor: pointer;
+        }
+        #open-vr {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
         }
     </style>
 </head>
@@ -32,13 +39,24 @@
     <p id="verse">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." - John 3:16</p>
 
     <button class="reveal-button" onclick="revealEasterEgg()">Click for a Surprise!</button>
-
     <div id="easter-egg">🎉 Surprise! You've unlocked a special message! 🎉</div>
+
+    <button id="open-vr">Open VR Experience</button>
 
     <script>
         function revealEasterEgg() {
             document.getElementById('easter-egg').style.display = 'block';
         }
+
+        document.getElementById("open-vr").addEventListener("click", function() {
+            var isOculusBrowser = /OculusBrowser/.test(navigator.userAgent);
+            if (isOculusBrowser) {
+                // Open the deep link URL to launch the VR experience
+                window.location.href = "oculuses://link-launch?url=https://mohaulik.github.io/NxtWebXR/";
+            } else {
+                alert("This feature is intended to be used with the Oculus Browser on Oculus devices.");
+            }
+        });
     </script>
 </body>
 </html>
