@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bible Verse with Easter Egg</title>
+    <style>
+        body {
+            background-color: white;
+            color: black;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 20px;
+        }
+        #easter-egg {
+            display: none;
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: darkorange;
+        }
+        .reveal-button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bible Verse</h1>
+    <p id="verse">"For God so loved the world that he gave his one and only Son, that whoever believes in him shall not perish but have eternal life." - John 3:16</p>
+
+    <button class="reveal-button" onclick="revealEasterEgg()">Click for a Surprise!</button>
+
+    <div id="easter-egg">🎉 Surprise! You've unlocked a special message! 🎉</div>
+
+    <script>
+        function revealEasterEgg() {
+            document.getElementById('easter-egg').style.display = 'block';
+        }
+    </script>
+</body>
+</html>
